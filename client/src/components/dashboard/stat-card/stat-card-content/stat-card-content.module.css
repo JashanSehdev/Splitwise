@@ -1,0 +1,24 @@
+
+.section1{
+    justify-content: space-between;
+    align-items: center;
+}
+
+.amount {
+    font-size: larger !important;
+    font-weight: 700 !important;
+}
+
+.icon {
+    font-size: smaller !important;
+}
+
+.container {
+    /* max-width: 500px !important;*/
+    min-width: 300px !important; 
+    flex-grow: 1 !important;
+}
+
+.title{
+    font-weight: 700 !important;
+}

@@ -1,0 +1,76 @@
+
+* {
+  margin : 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --mui-primary-main: #36D398;
+  --mui-primary-light: rgb(125, 131, 235);
+  --mui-primary-dark: rgb(65, 70, 161);
+  --mui-primary-contrast: #f3f5fd;
+  --mui-secondary-main: #977ae0;
+  --mui-secondary-light: rgb(171, 148, 230);
+  --mui-secondary-dark: rgb(105, 85, 156);
+  --mui-secondary-contrast: #f5f4fb;
+  --mui-success-main: #009843;
+  --mui-warning-main: #da9600;
+  --mui-error-main: #df2225;
+  --mui-info-main: #0081d0;
+  --mui-bg-default: #f9fafc;
+  --mui-bg-paper: #f0f2f5;
+  --mui-text-primary: #0a0f1a;
+  --mui-text-secondary: #545861;
+  --mui-divider: #e0e3e8;
+  --mui-radius: 8px;
+  --mui-font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+} */

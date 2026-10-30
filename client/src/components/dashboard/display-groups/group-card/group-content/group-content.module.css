@@ -1,0 +1,9 @@
+
+.heading {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dataLine{
+    justify-content: space-between;
+}

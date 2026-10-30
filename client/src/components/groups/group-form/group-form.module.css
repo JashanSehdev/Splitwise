@@ -1,0 +1,28 @@
+.image {
+    height: 100;
+    width: 100;
+    border: 2px black solid;
+    border-radius : 100%;
+    margin : auto;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+.editButton{
+    position: absolute !important;
+    bottom: 2;
+    right: 2;
+    background-color: var(--mui-primary-light) !important;
+    color: white !important;
+}
+
+.edit_image{
+    position: relative !important;
+    width: fit-content;
+    margin: auto;
+}
+
+.container {
+    align-items: center;
+}

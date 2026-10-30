@@ -1,0 +1,18 @@
+.container {
+  height: 100dvh;
+  justify-content: space-between;
+  max-width: 400px;
+  min-width: 300px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.logo_bar {
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  gap: 1;
+}

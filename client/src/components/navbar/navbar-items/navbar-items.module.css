@@ -1,0 +1,15 @@
+.link{
+    text-decoration: none;
+    color: inherit;
+}
+
+.selected {
+    background-color: var(--mui-success-main);
+    color:var(--mui-primary-contrast) ;
+    border-radius: 10px;
+}
+
+.icon {
+    color :var(--mui-primary-contrast) !important
+}
+

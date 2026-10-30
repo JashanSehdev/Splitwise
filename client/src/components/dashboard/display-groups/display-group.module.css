@@ -1,0 +1,14 @@
+.container{
+    margin-top: 1rem;
+    flex-wrap: wrap !important;
+}
+.section1{
+    margin: 1rem 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section2 {
+    flex-wrap:wrap ;
+    max-height: 200px !important;
+}

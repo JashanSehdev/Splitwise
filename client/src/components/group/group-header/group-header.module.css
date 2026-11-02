@@ -1,0 +1,15 @@
+.container {
+    justify-content:space-between ;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.section1 {
+    align-items: center;
+}
+
+.image {
+    border-radius: 20px;
+    height: 100 !important;
+    width: 100 !important;
+}

@@ -1,0 +1,56 @@
+
+@baseUrl = http://localhost:3001
+@contentType = application/json
+
+###
+# @name GetGroups
+GET  {{baseUrl}}/groups
+Content-Type: {{contentType}}
+
+### Get All Joined Groups (Default)
+GET {{baseUrl}}/groups?page=1&limit=10
+Content-Type: {{contentType}}
+
+###
+
+### Get Joined Groups
+GET {{baseUrl}}/groups?type=joined&page=1&limit=10
+Content-Type: {{contentType}}
+
+###
+
+### Get Created Groups
+GET {{baseUrl}}/groups?type=created&page=1&limit=10
+Content-Type: {{contentType}}
+
+###
+
+### Search Groups
+GET {{baseUrl}}/groups?search=f&page=1&limit=10
+Content-Type: {{contentType}}
+
+###
+
+### Search Joined Groups
+GET {{baseUrl}}/groups?type=joined&search=developers&page=1&limit=10
+Content-Type: {{contentType}}
+
+###
+
+### Search Created Groups
+GET {{baseUrl}}/groups?type=created&search=developers&page=1&limit=10
+Content-Type: {{contentType}}
+
+###
+
+### Test Pagination (Page 2)
+GET {{baseUrl}}/groups?type=joined&page=2&limit=5
+Content-Type: {{contentType}}
+
+###
+
+### Test Different Page Size
+GET {{baseUrl}}/groups?type=created&page=1&limit=20
+Content-Type: {{contentType}}
+
+

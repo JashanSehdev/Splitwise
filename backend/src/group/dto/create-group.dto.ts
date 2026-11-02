@@ -1,10 +1,11 @@
-import { IsOptional, isString, IsString } from "class-validator";
+import { IsOptional, IsString } from "class-validator";
 
 export class CreateGroupDto {
 
     @IsString()
-    name : string
+    title : string
 
+    @IsOptional()
     @IsString()
     description : string
     

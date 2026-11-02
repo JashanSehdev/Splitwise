@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {  GroupDetails } from "@/type/group.type";
+import {  BaseGroup
+ } from "@/type/group.type";
 import { createGroupAsync, fetchUserGroup } from "./handle-group/group.action";
 
 type InitialState = {
-  groups: GroupDetails[];
+  groups: BaseGroup[];
 };
 
 const initialState: InitialState = {
@@ -17,12 +18,12 @@ const groupSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(
       createGroupAsync.fulfilled,
-      (state, action: PayloadAction<GroupDetails>) => {
+      (state, action: PayloadAction<BaseGroup>) => {
         state.groups.push(action.payload);
       },
     )
     .addCase(fetchUserGroup.fulfilled, (state, action) => {
-      state.groups = action.payload
+      state.groups = action.payload.data
     })
   },
 });

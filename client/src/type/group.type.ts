@@ -1,19 +1,20 @@
+import { BaseUser } from "./user.type"
 
 export interface BaseGroup  {
-    name : string,
+    id : number
+    title : string,
+    description ?: string,
     createdAt : string,
+    updatedAt : string
     imageUrl : string,
+    memberCount : number,
+    expenses : number,
+    ownerId : number
 }
 
-export interface GroupDetails {
-  id: number;
-  name: string;
-  imageUrl: string;
-  ownerId: number;
-  description: string;
-  totalExpenditure: number;
-  createdAt: string;
-  updatedAt: string;
+
+export interface GroupDetails extends BaseGroup {
+  Owner : BaseUser
 }
 
 export interface GroupMemberRequest {

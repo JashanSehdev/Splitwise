@@ -13,7 +13,7 @@ export default function DisplayGroups () {
 
 
     useState(() => {
-        dispatch(fetchUserGroup())
+        dispatch(fetchUserGroup({page: 1, limit: 3}))
     })
 
     return (

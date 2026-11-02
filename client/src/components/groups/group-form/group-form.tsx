@@ -17,7 +17,7 @@ export default function GroupForm({ onClose }: GropuFormProp) {
   const { control, handleSubmit, reset } = useForm<GroupInput>({
     resolver: zodResolver(groupSchema),
     defaultValues : {
-      name :'',
+      title :'',
       description : ''
     }
   });
@@ -59,7 +59,7 @@ export default function GroupForm({ onClose }: GropuFormProp) {
         </Box>
 
         <ControlField
-          name="name"
+          name="title"
           type="text"
           label="Group Name"
           placeholder="eg : Manali Trip"

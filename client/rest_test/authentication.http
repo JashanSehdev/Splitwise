@@ -1,0 +1,59 @@
+# ==========================================
+# ENVIRONMENT VARIABLES & CONFIGURATION
+# ==========================================
+@baseUrl = http://localhost:3001
+@contentType = application/json
+
+@username  = Jashan_Sehdev
+@email = jashan@gmail.com
+@password = 123456
+
+
+###
+# @name Register
+# 1. AUTHENTICATION (LOGIN) REQUEST
+# This request submits credentials and receives the auth token.
+POST {{baseUrl}}/auth/register
+Content-Type: {{contentType}}
+
+{
+    "username" : "{{{{username}}}}",
+    "email": "{{email}}",
+    "password": "{{password}}"
+}
+
+
+###
+# @name login
+POST {{baseUrl}}/auth/login
+Content-Type: {{contentType}}
+
+{
+    "identifier": "{{username}}",
+    "password": "{{password}}"
+}
+
+###
+# @name getProfile
+# 2. PROTECTED ROUTE REQUEST (Using Bearer Token)
+# If your API uses Bearer tokens, we dynamically extract it from the login response.
+@authToken = {{login.response.body.token}}
+
+GET {{baseUrl}}/auth/me
+Authorization: Bearer {{authToken}}
+Content-Type: {{contentType}}
+
+###
+# @name getDashboard
+# 3. PROTECTED ROUTE REQUEST (Using Cookies)
+# NOTE: If your API uses HTTP-Only Cookies instead of tokens, you do NOT need 
+# the Authorization header above. The REST Client will automatically pass the 
+# cookie from the login response to this request behind the scenes.
+GET {{baseUrl}}/dashboard
+Content-Type: {{contentType}}
+
+###
+# 4. LOGOUT REQUEST
+POST {{baseUrl}}/auth/logout
+Authorization: Bearer {{authToken}}
+Content-Type: {{contentType}}

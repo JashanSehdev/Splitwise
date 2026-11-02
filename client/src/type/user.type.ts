@@ -1,6 +1,6 @@
 
 export type User = {
-    id : string;
+    id : number;
     username : string;
     email : string;
     role : string
@@ -13,4 +13,9 @@ export interface Profile {
     userId : number,
     owed : number,
     owedBy : number
+}
+
+export interface BaseUser {
+    id : number,
+    username : string
 }

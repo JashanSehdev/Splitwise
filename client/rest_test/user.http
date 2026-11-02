@@ -1,0 +1,9 @@
+
+
+@baseUrl = http://localhost:3001
+@contentType = application/json
+
+###
+# @name GetUsers
+GET {{baseUrl}}/users
+Content-Type: {{contentType}}

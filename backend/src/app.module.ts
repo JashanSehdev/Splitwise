@@ -1,4 +1,9 @@
-import { MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/common';
+import {
+  MiddlewareConsumer,
+  Module,
+  NestModule,
+  RequestMethod,
+} from '@nestjs/common';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -8,6 +13,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { AuthMiddleware } from './middleware/auth.middleware.js';
 import { GroupModule } from './group/group.module.js';
 import { GroupMembersModule } from './group_members/group_members.module.js';
+import { UserModule } from './users/user.module.js';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -28,9 +34,7 @@ import { GroupMembersModule } from './group_members/group_members.module.js';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (config: ConfigService) => {
-        console.log("Jwt token",
-          config.get<string>('JWT_SECRET')
-        )
+        console.log('Jwt token', config.get<string>('JWT_SECRET'));
         return {
           type: 'postgres',
           host: config.get<string>('DB_HOST'),
@@ -49,19 +53,21 @@ import { GroupMembersModule } from './group_members/group_members.module.js';
     GroupModule,
 
     GroupMembersModule,
+
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule implements NestModule{
+export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-      consumer
+    consumer
       .apply(AuthMiddleware)
       .exclude(
-        {path :'/auth/login', method: RequestMethod.POST},
-        {path :'/auth/register', method: RequestMethod.POST},
-        {path :'/auth/google', method: RequestMethod.POST},
+        { path: '/auth/login', method: RequestMethod.POST },
+        { path: '/auth/register', method: RequestMethod.POST },
+        { path: '/auth/google', method: RequestMethod.POST },
       )
-      .forRoutes('*')
+      .forRoutes('*');
   }
 }

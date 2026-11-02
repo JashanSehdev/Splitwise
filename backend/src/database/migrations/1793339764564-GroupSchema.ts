@@ -14,7 +14,7 @@ export class GroupSchema1793339764564 implements MigrationInterface {
                         isGenerated : true
                     },
                     {
-                        name : 'name',
+                        name : 'title',
                         type : 'varchar',
 
                     },
@@ -26,15 +26,11 @@ export class GroupSchema1793339764564 implements MigrationInterface {
                     {
                         name : 'description',
                         type : 'varchar',
+                        isNullable : true
                     },
                     {
                         name : 'ownerId',
                         type : 'integer',
-                    },
-                    {
-                        name : 'totalExpenditure',
-                        type : 'integer',
-                        default: 0
                     },
                     {
                         name : 'createdAt',

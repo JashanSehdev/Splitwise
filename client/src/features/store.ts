@@ -14,6 +14,7 @@ import storage from 'redux-persist/lib/storage';
 import { useDispatch, useSelector } from 'react-redux';
 import authReducer from './auth/auth.slice'
 import groupReducer from './group/group.slice'
+import userReducer from './user/user.slice'
 
 const persistConfig = {
   key: 'root',
@@ -23,7 +24,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  group: groupReducer
+  group: groupReducer,
+  users : userReducer
 });
 
 const persistedReducer = persistReducer(

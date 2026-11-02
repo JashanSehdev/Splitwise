@@ -7,6 +7,7 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
+  VirtualColumn,
   type Relation,
 } from 'typeorm';
 import { User } from '../../users/entities/users.entity.js';
@@ -18,19 +19,16 @@ export class Group {
   id: number;
 
   @Column({ type: 'varchar' })
-  name: string;
+  title: string;
 
-  @Column({ type: 'varchar' , nullable : true})
+  @Column({ type: 'varchar', nullable: true })
   imageUrl: string;
 
   @Column({ type: 'integer' })
   ownerId: number;
 
-  @Column({ type: 'varchar', length : 500 })
+  @Column({ type: 'varchar', length: 500, nullable: true })
   description: string;
-
-  @Column({ type: 'integer', default: 0 })
-  totalExpenditure: number;
 
   @CreateDateColumn()
   createdAt: Date;
@@ -38,10 +36,16 @@ export class Group {
   @UpdateDateColumn()
   updatedAt: Date;
 
+  @VirtualColumn({
+    query: (alias) =>
+      `(SELECT COUNT(*) FROM group_members gm WHERE gm."groupId" = ${alias}.id)`,
+  })
+  memberCount: number;
+
   @ManyToOne(() => User, (user) => user.CreatedGroups)
   @JoinColumn({ name: 'ownerId' })
   Owner: Relation<User>;
 
   @OneToMany(() => GroupMember, (gp) => gp.Group)
-  GroupMembers : Relation<GroupMember[]>
+  GroupMembers: Relation<GroupMember[]>;
 }
